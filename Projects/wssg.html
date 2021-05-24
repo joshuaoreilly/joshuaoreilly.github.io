@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<style>
+html {overflow-y: scroll;}/* Old color: #55bc9b */body{margin:0em auto; /*Make sure setting 0 instead of 1 doesn't break things*/max-width:40em;line-height: 1.6;padding:0 1.5em;font-family: 'Helvetica', sans-serif;font-size: 105%;font-weight: normal;color: #1a1a1a;}h1 {font-weight: bold;font-size: 140%;}h2 {font-weight: bold;font-size: 110%;}h3 {font-weight: bold;font-size: 105%;}h4 {font-weight: italic;font-size: 100%;}img {width:100%;}hr {border: 0;height: 1px;background: #1a1a1a;}/* HYPERLINK */a {text-decoration:none;}a:link {color: #0F52BA;}/* NAVBAR */nav {padding: 10px 0;}nav a {color: #0F52BA;padding: 10px;}/* BLOCKQUOTE */blockquote {border-left: 5px solid #ccc;}blockquote p {padding-left: 15px;padding-right: 15px;}
+</style>
+</head>
+<html>
+<body>
+<header>
+<nav>
+<a href="../index.html">Home</a>
+<a href="../Projects/index.html">Projects</a>
+<a href="../Research/index.html">Research</a>
+</nav>
+</header>
+<main><h1> wssg, the Worst Static Site Generator</h1>
+<h2> The Journey</h2>
+<p>
+The first version of this website was handcrafted HTML, each character lovingly typed.
+This was incredibly time consuming, so I switched to using pandoc to generate the HTML files.
+While allowing me to write in markdown, it was still pretty cumbersome.
+Since the navbar content resided in a distinct <code>header.html</code> file, I needed to update that file, then run pandoc on each markdown file again.
+I suppose I could have created a bash script to build the website this way, but bash is a scary language.
+Lastly, I explored using Hugo or Jekyll as a substitute.
+No theme matched what I was looking for exactly.
+I figured, instead of learning how to build my own Hugo theme or mod someone elses, why don't I just write my own static website generator and get some Python practice while I'm at it?
+</p>
+<p>
+This is why you don't do it, past Joshua.
+</p>
+<h2> wssg</h2>
+<p>
+<a href="https://github.com/joshuaoreilly/wssg">wssg</a>, pronounced about how you expect it, is my ongoing effort to write a static site generator.
+The first version, which took a few days of tinkering here and there, uses RegEx to split lines of markdown text into clumps of special characters (such as headers using #, lists using -, etc.), then iterates through the list of strings with some half-baked state machine.
+It really is a "write code and ask yourself if it's a good idea later" attempt.
+</p>
+<p>
+It <i>does</i> work, kind of.
+Bold text, italics, headers, hyperlinks, images, lists; they're supported.
+But hyperlinks with dashes will break because I hard-coded the number of "clumps" from beginning to end of a link.
+There's no nesting markdown syntax.
+A lot of basic syntax still isn't supported; blockquotes, LaTeX, etc.
+I figure a full rewrite of the markdown-to-html function using a proper state machine and character-by-character parsing is the most important thing to do, so that other changes don't end up needing to be re-written immediately.
+</p>
+</main>
+</body>
+</html>

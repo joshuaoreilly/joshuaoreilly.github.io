@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8"/>
+<style>
+html {overflow-y: scroll;}/* Old color: #55bc9b */body{margin:0em auto; /*Make sure setting 0 instead of 1 doesn't break things*/max-width:40em;line-height: 1.6;padding:0 1.5em;font-family: 'Helvetica', sans-serif;font-size: 105%;font-weight: normal;color: #1a1a1a;}h1 {font-weight: bold;font-size: 140%;}h2 {font-weight: bold;font-size: 110%;}h3 {font-weight: bold;font-size: 105%;}h4 {font-weight: italic;font-size: 100%;}img {width:100%;}hr {border: 0;height: 1px;background: #1a1a1a;}/* HYPERLINK */a {text-decoration:none;}a:link {color: #0F52BA;}/* NAVBAR */nav {padding: 10px 0;}nav a {color: #0F52BA;padding: 10px;}/* BLOCKQUOTE */blockquote {border-left: 5px solid #ccc;}blockquote p {padding-left: 15px;padding-right: 15px;}
+</style>
+</head>
+<html>
+<body>
+<header>
+<nav>
+<a href="../index.html">Home</a>
+<a href="../Projects/index.html">Projects</a>
+<a href="../Research/index.html">Research</a>
+</nav>
+</header>
+<main><h1> O Crab</h1>
+<h2> Senior Year Design Project</h2>
+<h3> September 2019 - December 2019</h3>
+<img src="../static/ocrab_iso.jpg" alt="Render of O Crab robot">
+<p>
+For our senior year design project, we created the O-Crab, a biologically inspired robot designed to navigate beaches and waterfront environments collecting litter.
+We were responsible for the locomotion system and chassis, while another team designed the arm and litter box.
+</p>
+<img src="../static/ocrab_witharm.png" alt="Render of O Crab robot, with arm">
+<h2> Weatherproofing</h2>
+<p>
+The chassis is made of acrylic, as it is salt and UV resistant, and surprisingly sturdy.
+Bellows cover the legs, preventing salt and water from entering the chassis.
+A gasket shown in the top view seals the lid and a wire feed-through passes wires for the solar cells and litter arm into the chassis.
+</p>
+<img src="../static/ocrab_interior.png" alt="Top view of O Crab with cover off">
+<h2> Walking</h2>
+<p>
+Each of the five legs has 2 degrees of freedom, with a joint at the hip and a joint at the knee.
+The actuators for both are placed inside the robot, with the knee motor connected to the knee shaft using a belt and pulley system.
+</p>
+<img src="../static/ocrab_leg_top.jpg" alt="Top view of leg assembly">
+<p>
+The robot turns by moving the legs on one side faster than the other side, much like a tank.
+DC motors and Harmonic Drive CSD component sets are used to generate and transmit torque.
+Torsion springs were added to the shafts to bring the torque down while the foot is on the ground (the long, flat stretch of both lines).
+Once below the backdriving limit of the Harmonic Drives (green line), the springs and drives hold the robot up without the motors expending any energy.
+</p>
+<img src="../static/ocrab_torque.png" alt="Figure showing various torque levels during walking">
+<h2> Parametrization</h2>
+<p>
+One of our goals for this project was to make the robot scaleable; the user can input different values of leg reach and litter weight, and the robot will scale accordingly.
+Our procedure is simple; first, the program starts with an initial prediction of the robot dimensions and weight.
+External forces, power consumption, and internal stresses are calculated, and part dimensions are calculated to meet their minimum safety factors.
+Their masses are calculated, and the process repeats until the total mass stops changing.
+The process is outlined in the flowchart below.
+</p>
+<img src="../static/ocrab_parametrization.png" alt="Flowchart of how robot design was parametrized">
+<p>
+The robot can scale between half a meter to a meter in length, between 30kg and 90kg, and with leg reaches varying from 0.1 to 0.7m.
+</p>
+<img src="../static/ocrab_scaling.jpg" alt="Two O Crabs side by side with small and large litter capacities">
+<h2> Reports and Links</h2>
+<p>
+The source code for the reports (LaTeX) and parametrization (MATLAB) can be found on [Github](https://github.com/joshuaoreilly/MCG4322-capstone).
+The Capstone Report provides a summary of the entire project.
+The CAD models can be downloaded from [GrabCAD](https://grabcad.com/library/o-crab-1).
+</p>
+<ul>
+<li> <a href="https://u.pcloud.link/publink/show?code=XZ9McnXZi0Qwfbn0z4hDKfKaNb73of3u3zRX">Literature Report</a></li>
+<li> <a href="https://u.pcloud.link/publink/show?code=XZTMcnXZH4qUPvN5xu5MCY3fHShOVjF6r9P7">Concepts Report</a></li>
+<li> <a href="https://u.pcloud.link/publink/show?code=XZgMcnXZn6kuKfWbOQSzc89q9tDyWzvMhecV">Modelling Report</a></li>
+<li> <a href="https://u.pcloud.link/publink/show?code=XZCMcnXZLWFNBvMBSbJytTXnE6ReOjol3HOk">Analysis Report</a></li>
+<li> <a href="https://u.pcloud.link/publink/show?code=XZOMcnXZvAG7mk7KAgj1FVPGYWG0t85ENurX">Capstone Report</a></li>
+</ul>
+<h2> Credits</h2>
+<p>
+This project was completed alongside my amazing team
+</p>
+<ul>
+<li> Marc-André Arsenault</li>
+<li> Mathieu Carroll</li>
+<li> Alexane Lahaie</li>
+</ul>
+<p>
+I would like to thank Dr. Lanteigne and Philippe Kanz for their guidance throughout the semester. (I'll add links to everyone's online profiles once I figure out how to parse properly with <a href="wssg.html">wssg</a>.
+</p>
+</main>
+</body>
+</html>
