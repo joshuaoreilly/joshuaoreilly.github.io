@@ -40,10 +40,13 @@ It really is a "write code and ask yourself if it's a good idea later" attempt.
 <p>
 It <i>does</i> work, kind of.
 Bold text, italics, headers, hyperlinks, images, lists; they're supported.
-But hyperlinks with dashes will break because I hard-coded the number of "clumps" from beginning to end of a link.
+In fact, this website was generated using wssg!
+That said, not everything works.
+Most doesn't.
+Hyperlinks with dashes will break because I hard-coded the number of "clumps" from beginning to end of a link.
 There's no nesting markdown syntax.
 A lot of basic syntax still isn't supported; blockquotes, LaTeX, etc.
-I figure a full rewrite of the markdown-to-html function using a proper state machine and character-by-character parsing is the most important thing to do, so that other changes don't end up needing to be re-written immediately.
+I figure a full rewrite of the markdown-to-html function using a proper state machine or abstract-syntax tree and character-by-character parsing is the most important thing to do, so that other changes don't end up needing to be re-written immediately after re-writing the markdown parser.
 </p>
 </main>
 </body>
